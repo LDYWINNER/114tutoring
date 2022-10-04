@@ -57,10 +57,32 @@ public class FindDuplicates {
         return result;
     }
 
+    public static String findDuplicates2(String str){
+        String result = "";
+        for(int j=0; j<str.length(); j++){
+            char Origin1 =str.charAt(j);
+
+            for(int i = j + 1; i<str.length(); i++){
+                char Origin2 = str.charAt(i);
+                if (result.indexOf(Origin1) < 0 &&Origin1 == Origin2){
+                    result += Origin1;
+                    break;
+                }
+            }
+        }
+        return result;
+    }
+
+
     public static void main(String[] args) {
         int[] input = {5, 10, 2, 17, 31, 17, 10, 14, 2};
         printArray(input);
         int[] result = findDuplicates(input);
         printArray(result);
+
+        System.out.println("abracadabra, " + findDuplicates2("abracadabra"));
+        System.out.println("SUNY,Korea, " + findDuplicates2("SUNY,Korea"));
+        System.out.println("Stony Brook University, " + findDuplicates2("Stony Brook University"));
+        System.out.println("This is a test sentence., " + findDuplicates2("This is a test sentence."));
     }
 }
