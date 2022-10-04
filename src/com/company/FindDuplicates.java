@@ -25,16 +25,34 @@ public class FindDuplicates {
 
     public static int[] findDuplicates(int[] input) {
         int[] temp = new int[input.length];
-        int index = 0;
-        for (int num : input) {
-            if (isPresent(input, num)) {
-                System.out.println("temp");
-                System.out.println(Arrays.toString(temp));
-                temp[index] = num;
-                index++;
+        int[] storage = new int[input.length];
+        int storageIndex = 0;
+        int tempIndex = 0;
+
+        for (int i = 0; i < input.length; i++) {
+            if(isPresent(input, input[i])) {
+                boolean storeOrNot = true;
+
+                for(int num : storage) {
+                    if (num == input[i]) {
+                        storeOrNot = false;
+                        break;
+                    }
+                }
+
+                if(storeOrNot) {
+                    temp[tempIndex] = input[i];
+                    tempIndex++;
+                    storage[storageIndex] = input[i];
+                    storageIndex++;
+                }
             }
         }
 
+        int[] result = new int[tempIndex];
+        for(int j = 0; j < tempIndex; j++) {
+            result[j] = temp[j];
+        }
 
         return result;
     }

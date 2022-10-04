@@ -1,3 +1,5 @@
+package com.company;
+
 public class CountInRange {
 
     public static int countInRange (int[] integers, int a, int b) {

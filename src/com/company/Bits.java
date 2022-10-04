@@ -8,19 +8,22 @@ public class Bits{
         Scanner scan = new Scanner(System.in);
         System.out.println("Enter an integer greater than or equal to 0 (enter negative number to quit): ");
         int num1 = scan.nextInt();
-        int[] num = new int[1000];
+        scan.close();
+        int []num = new int[1000];
         if(num1 >= 0){
             int i = 0;
-            while(num1>0){
+            while (num1>0){
                 num[i] = num1 % 2;
-                num1 = num1/2;
+                num1 = num1 / 2;
                 i++;
+            }
+            for(int k = i - 1; k >= 0; k--){
+                System.out.print(num[k]);
             }
         }
         else{
-            System.out.println(" jjjjjj");
+            System.out.println(" ");
         }
-        System.out.println(Arrays.toString(num));
     }
 }
 
