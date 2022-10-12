@@ -1,7 +1,6 @@
 package com.company;
 
 import java.util.Random;
-
 public class ArrUtils {
 
     public static int[] randomArray(int upper, int size) {
