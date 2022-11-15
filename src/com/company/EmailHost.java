@@ -1,10 +1,8 @@
 package com.company;
 
-import java.util.Arrays;
-
 public class EmailHost{
     private final int capacity = 100;
-    private Message[] messages;
+    private Message[] messages = new Message[capacity];
     private int nextMessage = 0;
     private String hostname;
 
